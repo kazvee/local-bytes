@@ -1,4 +1,5 @@
 import './App.css';
+import RestaurantList from './components/RestaurantList';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         Browse our curated list of local restaurants, or search by name,
         cuisine, or recommended dishes
       </h3>
+      <RestaurantList />
     </>
   );
 }
