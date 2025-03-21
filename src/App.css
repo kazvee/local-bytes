@@ -1,11 +1,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
+  padding: 64px 0;
 }
 
 h1 {
@@ -34,6 +30,28 @@ p {
 
 .navbar-toggler-icon {
   filter: invert(1);
+}
+
+.card-text {
+  display: block;
+  text-align: left;
+  margin: 0;
+}
+
+.card .card-subtitle {
+  color: #198754;
+}
+
+.restaurant-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.card.border-double {
+  border: 3px solid #198754;
+  box-shadow: 0 0 0 3px white, 0 0 0 6px #198754;
 }
 
 @media (max-width: 576px) {
