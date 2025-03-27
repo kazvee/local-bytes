@@ -6,10 +6,31 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import restaurants from '../data/restaurants.json';
 
+const removeAccents = (str) => {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+};
+
 function RestaurantList({ searchQuery }) {
+
+  const processedRestaurants = useMemo(() => {
+    return restaurants.map(restaurant => ({
+      ...restaurant,
+
+      searchableName: removeAccents(restaurant.name),
+      searchableDishes: restaurant.recommended.map(dish => removeAccents(dish)),
+    }));
+  }, []);
+
+  const normalizedQuery = removeAccents(searchQuery);
+
   const fuse = useMemo(() => {
-    return new Fuse(restaurants, {
-      keys: ['name', 'cuisine', 'postcode', 'recommended'],
+    return new Fuse(processedRestaurants, {
+      keys: [
+        'searchableName',
+        'searchableDishes',
+        'cuisine',
+        'postcode'
+      ],
       threshold: 0.3,
       includeScore: true,
       includeMatches: true,
@@ -20,10 +41,10 @@ function RestaurantList({ searchQuery }) {
       ignoreLocation: true,
       findAllMatches: false,
     });
-  }, []);
+  }, [processedRestaurants]);
 
-  const filteredRestaurants = searchQuery
-    ? fuse.search(searchQuery).map((result) => result.item)
+  const filteredRestaurants = normalizedQuery
+    ? fuse.search(normalizedQuery).map(result => result.item)
     : restaurants;
 
   return (

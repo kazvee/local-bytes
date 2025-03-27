@@ -42,7 +42,7 @@ function NavigationBar({ onSearch }) {
               value={search}
               onChange={handleSearchChange}
             />
-            <Button variant='outline-light' aria-label='Submit search'>
+            <Button type='submit' variant='outline-light' aria-label='Submit search'>
               Search
             </Button>
           </Form>
