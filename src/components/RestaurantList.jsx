@@ -63,6 +63,9 @@ function RestaurantList({ searchQuery }) {
                     <strong>Postcode:</strong> {restaurant.postcode}
                   </Card.Text>
                   <Card.Text>
+                    <strong>Notes:</strong> {restaurant.notes}
+                  </Card.Text>
+                  <Card.Text>
                     <strong>Recommended:</strong>
                   </Card.Text>
                   <ul className='restaurant-list'>
