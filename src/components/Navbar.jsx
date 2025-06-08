@@ -33,7 +33,7 @@ function NavigationBar({ onSearch }) {
           LocalBytes
         </Navbar.Brand>
         <Navbar.Collapse id='navbarScroll'>
-          <Form className='d-flex ms-auto mt-2' onSubmit={handleSearchSubmit}>
+          <Form className='d-flex ms-auto' onSubmit={handleSearchSubmit}>
             <Form.Control
               type='search'
               placeholder='Search for a restaurant'
