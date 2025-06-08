@@ -29,6 +29,7 @@ function RestaurantList({ searchQuery }) {
         'searchableName',
         'searchableDishes',
         'cuisine',
+        'notes',
         'postcode'
       ],
       threshold: 0.3,
