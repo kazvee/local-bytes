@@ -63,17 +63,23 @@ function RestaurantList({ searchQuery }) {
                   <Card.Text>
                     <strong>Postcode:</strong> {restaurant.postcode}
                   </Card.Text>
-                  <Card.Text>
-                    <strong>Notes:</strong> {restaurant.notes}
-                  </Card.Text>
-                  <Card.Text>
-                    <strong>Recommended:</strong>
-                  </Card.Text>
-                  <ul className='restaurant-list'>
-                    {restaurant.recommended.map((dish, index) => (
-                      <li key={index}>{dish}</li>
-                    ))}
-                  </ul>
+                  {restaurant.notes?.length > 0 && (
+                    <Card.Text>
+                      <strong>Notes:</strong> {restaurant.notes}
+                    </Card.Text>
+                  )}
+                  {restaurant.recommended?.length > 0 && (
+                    <>
+                      <Card.Text>
+                        <strong>Recommended:</strong>
+                      </Card.Text>
+                      <ul className='restaurant-list'>
+                        {restaurant.recommended.map((dish, index) => (
+                          <li key={index}>{dish}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </Card.Body>
               </Card>
             </Col>
