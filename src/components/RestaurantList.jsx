@@ -87,13 +87,13 @@ function RestaurantList({ searchQuery }) {
         ) : (
           <div className='d-flex justify-content-center w-100'>
             <Card className='border-double'>
-              <Card.Body className='d-flex justify-content-center align-items-center'>
+              <Card.Body className='d-flex flex-column justify-content-center align-items-center text-center'>
                 <Card.Text>
                   <strong>No restaurants found</strong>
-                  <Card.Subtitle className='mt-2'>
-                    Try another search, or make a sandwich at home. 🥪
-                  </Card.Subtitle>
                 </Card.Text>
+                <Card.Subtitle className='mt-2'>
+                  Try another search, or make a sandwich at home. 🥪
+                </Card.Subtitle>
               </Card.Body>
             </Card>
           </div>
