@@ -20,7 +20,7 @@ function NavigationBar({ onSearch }) {
     <Navbar
       fixed='top'
       expand='lg'
-      className='bg-success text-white'
+      className='bg-success text-white p-0'
       aria-label='Main navigation'
     >
       <Container fluid>
@@ -30,6 +30,13 @@ function NavigationBar({ onSearch }) {
           className='order-first text-white'
         />
         <Navbar.Brand className='text-white' href='/'>
+          <img
+            src='logo.png'
+            alt='LocalBytes logo'
+            width='50'
+            height='auto'
+            className='me-2'
+          />
           LocalBytes
         </Navbar.Brand>
         <Navbar.Collapse id='navbarScroll'>
