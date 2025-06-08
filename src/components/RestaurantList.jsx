@@ -63,17 +63,23 @@ function RestaurantList({ searchQuery }) {
                   <Card.Text>
                     <strong>Postcode:</strong> {restaurant.postcode}
                   </Card.Text>
-                  <Card.Text>
-                    <strong>Notes:</strong> {restaurant.notes}
-                  </Card.Text>
-                  <Card.Text>
-                    <strong>Recommended:</strong>
-                  </Card.Text>
-                  <ul className='restaurant-list'>
-                    {restaurant.recommended.map((dish, index) => (
-                      <li key={index}>{dish}</li>
-                    ))}
-                  </ul>
+                  {restaurant.notes?.length > 0 && (
+                    <Card.Text>
+                      <strong>Notes:</strong> {restaurant.notes}
+                    </Card.Text>
+                  )}
+                  {restaurant.recommended?.length > 0 && (
+                    <>
+                      <Card.Text>
+                        <strong>Recommended:</strong>
+                      </Card.Text>
+                      <ul className='restaurant-list'>
+                        {restaurant.recommended.map((dish, index) => (
+                          <li key={index}>{dish}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </Card.Body>
               </Card>
             </Col>
@@ -81,13 +87,13 @@ function RestaurantList({ searchQuery }) {
         ) : (
           <div className='d-flex justify-content-center w-100'>
             <Card className='border-double'>
-              <Card.Body className='d-flex justify-content-center align-items-center'>
+              <Card.Body className='d-flex flex-column justify-content-center align-items-center text-center'>
                 <Card.Text>
                   <strong>No restaurants found</strong>
-                  <Card.Subtitle className='mt-2'>
-                    Try another search, or make a sandwich at home. 🥪
-                  </Card.Subtitle>
                 </Card.Text>
+                <Card.Subtitle className='mt-2'>
+                  Try another search, or make a sandwich at home. 🥪
+                </Card.Subtitle>
               </Card.Body>
             </Card>
           </div>
