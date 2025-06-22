@@ -63,6 +63,13 @@ function RestaurantList({ searchQuery }) {
                   <Card.Text>
                     <strong>Postcode:</strong> {restaurant.postcode}
                   </Card.Text>
+                  {restaurant.url && (
+                    <Card.Text>
+                      <a href={restaurant.url} target="_blank" rel="noopener noreferrer">
+                        View on Map
+                      </a>
+                    </Card.Text>
+                  )}
                   {restaurant.notes?.length > 0 && (
                     <Card.Text>
                       <strong>Notes:</strong> {restaurant.notes}
