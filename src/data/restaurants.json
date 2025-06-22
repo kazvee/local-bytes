@@ -3,6 +3,7 @@
         "name": "MyMy Sub",
         "postcode": "T2M 0K5",
         "cuisine": "Vietnamese",
+        "url": "https://maps.app.goo.gl/jjYgdBBGPh6Ubzty6",
         "notes": "",
         "recommended": [
             "House Special (Beef Sate & Chicken Sate) Submarine",
@@ -13,6 +14,7 @@
         "name": "Bánh Mì Phương Mai",
         "postcode": "T2A 0V1",
         "cuisine": "Vietnamese",
+        "url": "https://maps.app.goo.gl/NSHJosQGrwF6yNYu7",
         "notes": "",
         "recommended": [
             "Pork Ball Salted Egg Yolk Submarine",
@@ -23,6 +25,7 @@
         "name": "Một Tô",
         "postcode": "T2E 2S2",
         "cuisine": "Vietnamese",
+        "url": "https://maps.app.goo.gl/eJZWGMbWK7ajgJhy8",
         "notes": "",
         "recommended": [
             "Viet Sub",
@@ -33,6 +36,7 @@
         "name": "Pho Huydat Vietnamese Noodle House",
         "postcode": "T2N 2J2",
         "cuisine": "Vietnamese",
+        "url": "https://maps.app.goo.gl/ykvAAFtgMFcFajKh6",
         "notes": "",
         "recommended": [
             "Chả nem Hà Nội - Fried 'Ha Noi' Style Spring Rolls"
@@ -42,6 +46,7 @@
         "name": "Lily Vietnamese Submarines",
         "postcode": "T3B 0B3",
         "cuisine": "Vietnamese",
+        "url": "https://maps.app.goo.gl/qjDNoYiaK1gSqK3XA",
         "notes": "Deep-Fried Meatball Sub reminds K of Leberkäse!",
         "recommended": [
             "Deep Fried Wonton",
@@ -51,8 +56,9 @@
     },
     {
         "name": "Banh Mi Nhu Y",
-        "postcode": "T2A 0R1",
+        "postcode": "T2A 0P9",
         "cuisine": "Vietnamese",
+        "url": "https://maps.app.goo.gl/pUSfXJZz65K2bUzz8",
         "notes": "Their menu is huge, great selection!",
         "recommended": [
             "Banh Mi Bo La Lop - Betel Leaf Beef Sub",
@@ -63,6 +69,7 @@
         "name": "Phi Nhung",
         "postcode": "T2L 1K8",
         "cuisine": "Vietnamese",
+        "url": "https://maps.app.goo.gl/XphEpY9n1YepZJoL6",
         "notes": "They have a robot that delivers food to your table! We aren't really fans of the BBQ Pork sub. None of their subs come with jalapeños.",
         "recommended": [
             "Satay Beef & Egg Vietnamese Sub (fried egg)",
