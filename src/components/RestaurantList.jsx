@@ -99,7 +99,7 @@ function RestaurantList({ searchQuery }) {
                   <strong>No restaurants found</strong>
                 </Card.Text>
                 <Card.Subtitle className='mt-2'>
-                  Try another search, or make a sandwich at home. 🥪
+                  Try another search, or make <strong>{searchQuery}</strong> at home. 🥪
                 </Card.Subtitle>
               </Card.Body>
             </Card>
