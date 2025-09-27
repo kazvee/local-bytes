@@ -22,8 +22,14 @@ function Footer() {
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='Visit the LocalBytes GitHub repo'
-              >
-                <Image src='/github.png' width={24} height={24} /> GitHub
+                >
+                <Image
+                  src='/github.png'
+                  alt='Visit the LocalBytes GitHub repo'
+                  width={24}
+                  height={24}
+                />{' '}
+                GitHub
               </Nav.Link>
             </Nav>
           </Col>
