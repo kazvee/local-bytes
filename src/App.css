@@ -43,10 +43,19 @@ p {
 }
 
 .restaurant-list {
-  list-style-type: none;
+  list-style-type: square;
   margin: 0;
-  padding: 0;
+  padding-left: 1.2rem;
   text-align: left;
+}
+
+.restaurant-list li {
+  padding-left: 0;
+  color: black;
+}
+
+.restaurant-list li::marker {
+  color: #198754;
 }
 
 .card.border-double {
