@@ -6,10 +6,32 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import restaurants from '../data/restaurants.json';
 
+const removeAccents = (str) => {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+};
+
 function RestaurantList({ searchQuery }) {
+
+  const processedRestaurants = useMemo(() => {
+    return restaurants.map(restaurant => ({
+      ...restaurant,
+
+      searchableName: removeAccents(restaurant.name),
+      searchableDishes: restaurant.recommended.map(dish => removeAccents(dish)),
+    }));
+  }, []);
+
+  const normalizedQuery = removeAccents(searchQuery);
+
   const fuse = useMemo(() => {
-    return new Fuse(restaurants, {
-      keys: ['name', 'cuisine', 'postcode', 'recommended'],
+    return new Fuse(processedRestaurants, {
+      keys: [
+        'searchableName',
+        'searchableDishes',
+        'cuisine',
+        'notes',
+        'postcode'
+      ],
       threshold: 0.3,
       includeScore: true,
       includeMatches: true,
@@ -20,10 +42,10 @@ function RestaurantList({ searchQuery }) {
       ignoreLocation: true,
       findAllMatches: false,
     });
-  }, []);
+  }, [processedRestaurants]);
 
-  const filteredRestaurants = searchQuery
-    ? fuse.search(searchQuery).map((result) => result.item)
+  const filteredRestaurants = normalizedQuery
+    ? fuse.search(normalizedQuery).map(result => result.item)
     : restaurants;
 
   return (
@@ -41,14 +63,30 @@ function RestaurantList({ searchQuery }) {
                   <Card.Text>
                     <strong>Postcode:</strong> {restaurant.postcode}
                   </Card.Text>
-                  <Card.Text>
-                    <strong>Recommended:</strong>
-                  </Card.Text>
-                  <ul className='restaurant-list'>
-                    {restaurant.recommended.map((dish, index) => (
-                      <li key={index}>{dish}</li>
-                    ))}
-                  </ul>
+                  {restaurant.url && (
+                    <Card.Text>
+                      <a href={restaurant.url} target="_blank" rel="noopener noreferrer">
+                        View on Map
+                      </a>
+                    </Card.Text>
+                  )}
+                  {restaurant.notes?.length > 0 && (
+                    <Card.Text>
+                      <strong>Notes:</strong> {restaurant.notes}
+                    </Card.Text>
+                  )}
+                  {restaurant.recommended?.length > 0 && (
+                    <>
+                      <Card.Text>
+                        <strong>Recommended:</strong>
+                      </Card.Text>
+                      <ul className='restaurant-list'>
+                        {restaurant.recommended.map((dish, index) => (
+                          <li key={index}>{dish}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </Card.Body>
               </Card>
             </Col>
@@ -56,13 +94,13 @@ function RestaurantList({ searchQuery }) {
         ) : (
           <div className='d-flex justify-content-center w-100'>
             <Card className='border-double'>
-              <Card.Body className='d-flex justify-content-center align-items-center'>
+              <Card.Body className='d-flex flex-column justify-content-center align-items-center text-center'>
                 <Card.Text>
                   <strong>No restaurants found</strong>
-                  <Card.Subtitle className='mt-2'>
-                    Try another search, or make a sandwich at home. 🥪
-                  </Card.Subtitle>
                 </Card.Text>
+                <Card.Subtitle className='mt-2'>
+                  Try another search, or make <strong>{searchQuery}</strong> at home. 🥪
+                </Card.Subtitle>
               </Card.Body>
             </Card>
           </div>
