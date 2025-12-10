@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "convert": "node utils/csvToJson.js",
+    "dev": "npm run convert && vite",
+    "build": "npm run convert && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
