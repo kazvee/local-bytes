@@ -32,17 +32,120 @@ p {
   filter: invert(1);
 }
 
+.card-text {
+  display: block;
+  text-align: left;
+  margin: 0;
+}
+
+.card .card-subtitle {
+  color: #198754;
+}
+
+.restaurant-list {
+  list-style-type: square;
+  margin: 0;
+  padding-left: 1.2rem;
+  text-align: left;
+}
+
+.restaurant-list li {
+  padding-left: 0;
+  color: black;
+}
+
+.restaurant-list li::marker {
+  color: #198754;
+}
+
+.card.border-double {
+  border: 3px solid #198754;
+  box-shadow: 0 0 0 3px white, 0 0 0 6px #198754;
+}
+
 @media (max-width: 576px) {
   body {
     font-size: 14px;
+    padding-top: 7rem;
   }
 
   .navbar {
     text-align: center;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .navbar .navbar-brand {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .search-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    background: white;
+    z-index: 1000;
+    padding: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-shrink: 1;
+  }
+
+  .search-bar input {
+    flex-shrink: 1;
+    min-width: 0;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .search-bar button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .navbar-brand img {
+    width: 40px;
+  }
+
+  .navbar .container-fluid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-content {
+    margin-top: 70px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  body {
+    font-size: 14px;
+    padding-top: 7rem;
+  }
+
+  .search-bar {
+    width: 70%;
+  }
+
+  .navbar .container-fluid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar .form-control {
+    font-size: 0.9rem;
+  }
+
+  .navbar .btn {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .navbar .navbar-brand img {
+    width: 45px;
   }
 }
 

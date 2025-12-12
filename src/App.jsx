@@ -1,14 +1,21 @@
+import { useState } from 'react';
+import NavigationBar from './components/Navbar';
+import RestaurantList from './components/RestaurantList';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
   return (
     <>
-      <h1>LocalBytes</h1>
-      <h2>Welcome to LocalBytes</h2>
-      <h3>
-        Browse our curated list of local restaurants, or search by name,
-        cuisine, or recommended dishes
-      </h3>
+      <NavigationBar onSearch={handleSearch} />
+      <RestaurantList searchQuery={searchQuery} />
+      <Footer />
     </>
   );
 }
