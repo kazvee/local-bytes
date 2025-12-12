@@ -23,7 +23,7 @@ function Footer() {
                 rel='noopener noreferrer'
                 aria-label='Visit the LocalBytes GitHub repo'
               >
-                <Image src='/github.png' width={24} height={24} /> GitHub
+                <Image src={`${import.meta.env.BASE_URL}github.png`} width={24} height={24} /> GitHub
               </Nav.Link>
             </Nav>
           </Col>
