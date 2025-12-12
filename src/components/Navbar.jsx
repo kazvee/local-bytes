@@ -28,7 +28,7 @@ function NavigationBar({ onSearch }) {
         <div className='d-flex w-100 justify-content-between align-items-center'>
           <Navbar.Brand className='text-white mx-auto mx-sm-0' href='/'>
             <img
-              src='logo.png'
+              src={`${import.meta.env.BASE_URL}logo.png`}
               alt='LocalBytes logo'
               width='50'
               height='auto'
@@ -56,7 +56,7 @@ function NavigationBar({ onSearch }) {
             <span className='d-none d-sm-inline'>Search</span>
 
             <img
-              src='search.png'
+              src={`${import.meta.env.BASE_URL}search.png`}
               alt='Search'
               className='d-inline d-sm-none'
               style={{ width: '1.2rem', height: '1.2rem' }}
