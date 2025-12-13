@@ -26,7 +26,7 @@ function NavigationBar({ onSearch }) {
       onToggle={() => setExpanded(!expanded)}>
       <Container fluid className='d-flex flex-column flex-sm-row'>
         <div className='d-flex w-100 justify-content-between align-items-center'>
-          <Navbar.Brand className='text-white mx-auto mx-sm-0' href='/'>
+          <Navbar.Brand className='text-white mx-auto mx-sm-0' href={`${import.meta.env.BASE_URL}`}>
             <img
               src={`${import.meta.env.BASE_URL}logo.png`}
               alt='LocalBytes logo'
@@ -67,7 +67,7 @@ function NavigationBar({ onSearch }) {
         {/* <Navbar.Collapse id='navbarScroll' className='mt-2'>
           <Nav className='ms-auto flex-column flex-lg-row'>
             <Nav.Link
-              href='https://https://github.com/kazvee/localbytes/#readme.com'
+              href='https://github.com/kazvee/localbytes/#readme.com'
               target='_blank'
               rel='noopener noreferrer nofollow'
               className='text-white'
