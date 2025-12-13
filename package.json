@@ -8,6 +8,7 @@
     "convert": "node utils/csvToJson.js",
     "dev": "npm run convert && vite",
     "build": "npm run convert && vite build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
