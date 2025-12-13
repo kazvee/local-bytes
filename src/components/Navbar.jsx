@@ -3,11 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+// import Nav from 'react-bootstrap/Nav';
 
 function NavigationBar({ onSearch }) {
   const [search, setSearch] = useState('');
-  const [expanded, setExpanded] = useState(false);
+  // const [expanded, setExpanded] = useState(false);
 
   const handleSearchChange = (e) => setSearch(e.target.value);
 
@@ -22,8 +22,9 @@ function NavigationBar({ onSearch }) {
       fixed='top'
       expand='lg'
       className='bg-success text-white p-2'
-      expanded={expanded}
-      onToggle={() => setExpanded(!expanded)}>
+      // expanded={expanded}
+      // onToggle={() => setExpanded(!expanded)}
+      >
       <Container fluid className='d-flex flex-column flex-sm-row'>
         <div className='d-flex w-100 justify-content-between align-items-center'>
           <Navbar.Brand className='text-white mx-auto mx-sm-0' href={`${import.meta.env.BASE_URL}`}>
@@ -37,7 +38,7 @@ function NavigationBar({ onSearch }) {
             LocalBytes
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls='navbarScroll' />
+          {/* <Navbar.Toggle aria-controls='navbarScroll' /> */}
         </div>
 
         <Form
