@@ -4,6 +4,14 @@
 ## Description & Use Case
 LocalBytes is a lightweight, responsive app to browse restaurants, filter by cuisine, and view recommended dishes.
 
+## Screenshots
+
+### Mobile View
+![LocalBytes Mobile View](docs/LocalBytes_Mobile_Screenshot.png)
+
+### Desktop View
+![LocalBytes Desktop View](docs/LocalBytes_Screenshot.png)
+
 ## Data Update Flow 
 Restaurant data is handled via a straightforward CSV-to-JSON workflow:
 * **Shared CSV**: Users maintain a shared CSV file containing restaurants visited, favourite dishes, and location details. When new entries are added, the CSV is added to `src/data` for the next app refresh.
@@ -40,7 +48,7 @@ flowchart TD
 ## Installation 💻 
 * Clone this repo to your local machine. 
 * Install dependencies: `npm i` (or `npm install`). 
-* Create file restaurants.csv inside src/data, using example.restaurants.csv as a reference to ensure correct headers and formatting. 
+* Create file `restaurants.csv` inside `src/data`, using `example.restaurants.csv` as a reference to ensure correct headers and formatting. 
 
 ### Start the Development Server 
 * Run `npm run dev`. 
