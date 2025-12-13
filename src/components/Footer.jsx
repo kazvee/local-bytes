@@ -24,7 +24,7 @@ function Footer() {
                 aria-label='Visit the LocalBytes GitHub repo'
                 >
                 <Image
-                  src='/github.png'
+                  src={`${import.meta.env.BASE_URL}github.png`}
                   alt='Visit the LocalBytes GitHub repo'
                   width={24}
                   height={24}
