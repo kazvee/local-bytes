@@ -1,4 +1,5 @@
 # LocalBytes 🍔
+✨ [LIVE DEMO](https://kazvee.github.io/localbytes/) ✨
 
 ## Description & Use Case
 LocalBytes is a lightweight, responsive app to browse restaurants, filter by cuisine, and view recommended dishes.
