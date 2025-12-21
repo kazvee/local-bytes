@@ -17,15 +17,15 @@ function Footer() {
           <Col className='text-center'>
             <Nav className='flex-column'>
               <Nav.Link
-                href='https://github.com/kazvee/localbytes/#readme'
+                href='https://github.com/kazvee/local-bytes/#readme'
                 className='text-light'
                 target='_blank'
                 rel='noopener noreferrer'
-                aria-label='Visit the LocalBytes GitHub repo'
+                aria-label='Visit the Local Bytes GitHub repo'
                 >
                 <Image
                   src={`${import.meta.env.BASE_URL}github.png`}
-                  alt='Visit the LocalBytes GitHub repo'
+                  alt='Visit the Local Bytes GitHub repo'
                   width={24}
                   height={24}
                 />{' '}
