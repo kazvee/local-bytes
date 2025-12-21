@@ -1,16 +1,18 @@
 # Local Bytes 🍔
 ✨ [LIVE DEMO](https://kazvee.github.io/local-bytes/) ✨
+# Local Bytes 🍔
+✨ [LIVE DEMO](https://kazvee.github.io/local-bytes/) ✨
 
 ## Description & Use Case
-Local Bytes is a lightweight, responsive app to browse restaurants, filter by cuisine, and view recommended dishes.
+Local Bytes is a lightweight, responsive restaurant explorer app. Search by dish or cuisine and view recommended dishes.
 
 ## Screenshots
 
 ### Mobile View
-![Local Bytes Mobile View](docs/Local_Bytes_Mobile_Screenshot.png)
+![Local Bytes Mobile View](docs/Local-Bytes_Mobile_Screenshot.png)
 
 ### Desktop View
-![Local Bytes Desktop View](docs/Local_Bytes_Screenshot.png)
+![Local Bytes Desktop View](docs/Local-Bytes_Screenshot.png)
 
 ## Data Update Flow 
 Restaurant data is handled via a straightforward CSV-to-JSON workflow:
@@ -32,7 +34,7 @@ flowchart TD
     Contributor2["🐿️ Contributor 2"] --> CSV
     CSV --> Converter["✨ CSV-to-JSON Converter"]
     Converter --> JSON["📄 Generated JSON"]
-    JSON --> App["💻 Loca Bytes App"]
+    JSON --> App["💻 Local Bytes App"]
 ```
 
 ## Built With 👩‍💻
