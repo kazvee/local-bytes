@@ -77,6 +77,12 @@ function RestaurantList({ searchQuery }) {
                     </Card.Text>
                   )}
 
+                  {restaurant.notes && restaurant.notes.trim() !== '' && (
+                    <Card.Text>
+                      <strong>Notes:</strong> {restaurant.notes}
+                    </Card.Text>
+                  )}
+
                   {restaurant.recommended && restaurant.recommended.length > 0 && (
                     <>
                       <Card.Text>
