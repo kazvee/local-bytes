@@ -30,12 +30,12 @@ function NavigationBar({ onSearch }) {
           <Navbar.Brand className='text-white mx-auto mx-sm-0' href={`${import.meta.env.BASE_URL}`}>
             <img
               src={`${import.meta.env.BASE_URL}logo.png`}
-              alt='LocalBytes logo'
+              alt='Local Bytes logo'
               width='50'
               height='auto'
               className='me-2'
             />
-            LocalBytes
+            Local Bytes
           </Navbar.Brand>
 
           {/* <Navbar.Toggle aria-controls='navbarScroll' /> */}
@@ -68,7 +68,7 @@ function NavigationBar({ onSearch }) {
         {/* <Navbar.Collapse id='navbarScroll' className='mt-2'>
           <Nav className='ms-auto flex-column flex-lg-row'>
             <Nav.Link
-              href='https://github.com/kazvee/localbytes/#readme.com'
+              href='https://github.com/kazvee/local-bytes/#readme.com'
               target='_blank'
               rel='noopener noreferrer nofollow'
               className='text-white'
