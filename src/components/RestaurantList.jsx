@@ -6,10 +6,27 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import restaurants from '../data/restaurants.json';
 
+function normalizeText(value) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
 function RestaurantList({ searchQuery }) {
+  const normalizedRestaurants = useMemo(() => {
+    return restaurants.map(r => ({
+      ...r,
+      n_name: normalizeText(r.name ?? ''),
+      n_cuisine: normalizeText(r.cuisine ?? ''),
+      n_postcode: normalizeText(r.postcode ?? ''),
+      n_recommended: normalizeText((r.recommended ?? []).join(' '))
+    }));
+  }, []);
+
   const fuse = useMemo(() => {
-    return new Fuse(restaurants, {
-      keys: ['name', 'cuisine', 'postcode', 'recommended'],
+    return new Fuse(normalizedRestaurants, {
+      keys: ['n_name', 'n_cuisine', 'n_postcode', 'n_recommended'],
       threshold: 0.3,
       includeScore: true,
       includeMatches: true,
@@ -18,13 +35,13 @@ function RestaurantList({ searchQuery }) {
       location: 0,
       distance: 100,
       ignoreLocation: true,
-      findAllMatches: false,
+      findAllMatches: false
     });
-  }, []);
+  }, [normalizedRestaurants]);
 
   const filteredRestaurants = searchQuery
-    ? fuse.search(searchQuery).map((result) => result.item)
-    : restaurants;
+    ? fuse.search(normalizeText(searchQuery)).map((result) => result.item)
+    : normalizedRestaurants;
 
   return (
     <Container className='mt-4'>
