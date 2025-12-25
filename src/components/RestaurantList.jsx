@@ -19,14 +19,14 @@ function RestaurantList({ searchQuery }) {
       ...r,
       n_name: normalizeText(r.name ?? ''),
       n_cuisine: normalizeText(r.cuisine ?? ''),
-      n_postcode: normalizeText(r.postcode ?? ''),
+      n_notes: normalizeText(r.notes ?? ''),
       n_recommended: normalizeText((r.recommended ?? []).join(' '))
     }));
   }, []);
 
   const fuse = useMemo(() => {
     return new Fuse(normalizedRestaurants, {
-      keys: ['n_name', 'n_cuisine', 'n_postcode', 'n_recommended'],
+      keys: ['n_name', 'n_cuisine', 'n_notes', 'n_recommended'],
       threshold: 0.3,
       includeScore: true,
       includeMatches: true,
