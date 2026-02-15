@@ -77,6 +77,15 @@ function RestaurantList({ searchQuery }) {
                     </Card.Text>
                   )}
 
+                  {restaurant.menuUrl && (
+                    <Card.Text>
+                      📗
+                      <a href={restaurant.menuUrl} target="_blank" rel="noopener noreferrer">
+                        Menu
+                      </a>
+                    </Card.Text>
+                  )}
+
                   {restaurant.notes && restaurant.notes.trim() !== '' && (
                     <Card.Text>
                       <strong>Notes:</strong> {restaurant.notes}
