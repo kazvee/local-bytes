@@ -7,10 +7,10 @@ Local Bytes is a lightweight, responsive restaurant explorer app. Search by dish
 ## Screenshots
 
 ### Mobile View
-![Local Bytes Mobile View](docs/Local-Bytes_Mobile_Screenshot.png)
+![Local Bytes Mobile View](docs/Local_Bytes_Mobile.png)
 
 ### Desktop View
-![Local Bytes Desktop View](docs/Local-Bytes_Screenshot.png)
+![Local Bytes Desktop View](docs/Local_Bytes_Desktop.png)
 
 ## Data Update Flow 
 Restaurant data is handled via a straightforward CSV-to-JSON workflow:
