@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Image } from 'react-bootstrap';
 
-function Footer() {
+function Footer({ onAboutClick }) {
   return (
     <Navbar
       fixed='bottom'
@@ -15,14 +15,22 @@ function Footer() {
       <Container className='d-flex justify-content-center'>
         <Row className='w-100'>
           <Col className='text-center'>
-            <Nav className='flex-column'>
+            <Nav className='flex-column flex-sm-row justify-content-center gap-2'>
               <Nav.Link
-                href='https://github.com/kazvee/local-bytes/#readme'
+                className='text-light'
+                onClick={onAboutClick}
+                aria-label='About LocalBytes'
+              >
+                ❔ About
+              </Nav.Link>
+
+              <Nav.Link
+                href='https://github.com/kazvee/localbytes/#readme'
                 className='text-light'
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='Visit the Local Bytes GitHub repo'
-                >
+              >
                 <Image
                   src={`${import.meta.env.BASE_URL}github.png`}
                   alt='Visit the Local Bytes GitHub repo'
