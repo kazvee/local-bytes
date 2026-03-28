@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Image } from 'react-bootstrap';
 
-function Footer({ onAboutClick }) {
+function Footer({ onAboutClick, onPrivacyClick }) {
   return (
     <Navbar
       fixed='bottom'
@@ -22,6 +22,14 @@ function Footer({ onAboutClick }) {
                 aria-label='About LocalBytes'
               >
                 ❔ About
+              </Nav.Link>
+
+              <Nav.Link
+                className='text-light'
+                onClick={onPrivacyClick}
+                aria-label='Privacy Policy'
+              >
+                🔒 Privacy
               </Nav.Link>
 
               <Nav.Link
