@@ -15,7 +15,7 @@ function Footer({ onAboutClick }) {
       <Container className='d-flex justify-content-center'>
         <Row className='w-100'>
           <Col className='text-center'>
-            <Nav className='flex-column flex-sm-row justify-content-center gap-2'>
+            <Nav className='d-flex flex-row justify-content-center gap-3'>
               <Nav.Link
                 className='text-light'
                 onClick={onAboutClick}
