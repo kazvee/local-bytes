@@ -41,6 +41,8 @@ flowchart TD
 * [Bootstrap](https://getbootstrap.com/)
 * [Fuse.js](https://fusejs.io/) for fuzzy search
 * CSV-to-JSON conversion utility
+* [Umami](https://umami.is/) (privacy-friendly analytics)  
+* [Cloudflare Web Analytics](https://www.cloudflare.com/products/web-analytics/)  
 
 ## Thanks & Acknowledgements 🤗
 * [Hamburger](https://icons8.com/icon/H9McyiOAZ5XF/hamburger), [GitHub](https://icons8.com/icon/I7n6n02hutM5/github), and [Search](https://icons8.com/icon/hO06R7BwJumP/search) icons by [Icons8](https://icons8.com)
