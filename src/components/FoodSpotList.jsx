@@ -97,7 +97,7 @@ function FoodSpotList({ searchQuery }) {
                       <Card.Text>
                         <strong>Recommended:</strong>
                       </Card.Text>
-                      <ul className='foodSpot-list'>
+                      <ul className='foodspot-list'>
                         {foodSpot.recommended.map((dish, index) => (
                           <li key={index}>{dish}</li>
                         ))}
