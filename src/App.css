@@ -42,19 +42,19 @@ p {
   color: #198754;
 }
 
-.restaurant-list {
+.foodspot-list {
   list-style-type: square;
   margin: 0;
   padding-left: 1.2rem;
   text-align: left;
 }
 
-.restaurant-list li {
+.foodspot-list li {
   padding-left: 0;
   color: black;
 }
 
-.restaurant-list li::marker {
+.foodspot-list li::marker {
   color: #198754;
 }
 
