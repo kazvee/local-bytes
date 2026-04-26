@@ -12,10 +12,11 @@ export default function About() {
                         <Card.Body>
                             <Card.Title className='mb-3'>🍔 LocalBytes</Card.Title>
                             <Card.Subtitle className='mb-3'>
-                                Personal Restaurant Tracker
+                                Personal Food Spot Tracker
                             </Card.Subtitle>
                             <Card.Text className='mb-3'>
-                                LocalBytes is a tracker for restaurants we've tried, so we remember which dishes we've enjoyed.
+                                Local Bytes is a tracker for food spots (including restaurants, bakeries, and grocery stores) that we've visited, helping us remember and rediscover dishes we've enjoyed.
+
                             </Card.Text>
                             <Card.Text className='mb-3'>
                                 Absence from the list just means I haven't been there yet! So far, I haven't found a place I wouldn't return to. 😋
