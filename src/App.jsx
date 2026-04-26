@@ -3,7 +3,7 @@ import NavigationBar from './components/Navbar';
 import About from './components/About';
 import Analytics from './components/Analytics';
 import Privacy from './components/Privacy';
-import RestaurantList from './components/RestaurantList';
+import FoodSpotList from './components/FoodSpotList';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <NavigationBar onSearch={handleSearch} />
-      {showAbout ? <About /> : showPrivacy ? <Privacy /> : <RestaurantList searchQuery={searchQuery} />}
+      {showAbout ? <About /> : showPrivacy ? <Privacy /> : <FoodSpotList searchQuery={searchQuery} />}
       <Footer
         onAboutClick={() => {
           setShowPrivacy(false);

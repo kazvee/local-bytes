@@ -5,8 +5,8 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const csvPath = path.join(__dirname, "../src/data/restaurants.csv");
-const jsonPath = path.join(__dirname, "../src/data/restaurants.json");
+const csvPath = path.join(__dirname, "../src/data/localbytes.csv");
+const jsonPath = path.join(__dirname, "../src/data/localbytes.json");
 
 // CSV parser that handles quoted multiline fields
 function parseCSV(text) {

@@ -2,7 +2,7 @@
 ✨ [LIVE DEMO](https://localbytes.kazvee.com/) ✨
 
 ## Description & Use Case
-Local Bytes is a lightweight, responsive restaurant explorer app. Search by dish or cuisine and view recommended dishes.
+Local Bytes is a lightweight, responsive food discovery app. Search by dish or cuisine to discover recommended items across a variety of food spots, including restaurants, bakeries, grocery stores, and more!
 
 ## Screenshots
 
@@ -13,10 +13,10 @@ Local Bytes is a lightweight, responsive restaurant explorer app. Search by dish
 ![Local Bytes Desktop View](docs/Local_Bytes_Desktop.png)
 
 ## Data Update Flow 
-Restaurant data is handled via a straightforward CSV-to-JSON workflow:
-* **Shared CSV**: Users maintain a shared CSV file containing restaurants visited, favourite dishes, and location details. When new entries are added, the CSV is added to `src/data` for the next app refresh.
+Food spot data is handled via a straightforward CSV-to-JSON workflow:
+* **Shared CSV**: Users maintain a shared CSV file of visited places (restaurants, bakeries, grocery stores, etc.) with favourite items and location details. When new entries are added, the CSV is added to `src/data` for the next app refresh.
 * **Conversion to JSON**: Before running or building the app, the CSV is converted to JSON using the built-in utility (`npm run convert`). This JSON is what the app reads at runtime.
-* **Static site usage**: The app renders restaurant data directly from the JSON. No database is required, keeping the site fast and mobile-friendly.
+* **Static site usage**: The app renders food spot data directly from the JSON. No database is required, keeping the site fast and mobile-friendly.
 
 ### Workflow Diagram 📑
 ```mermaid
@@ -50,7 +50,7 @@ flowchart TD
 ## Installation 💻 
 * Clone this repo to your local machine. 
 * Install dependencies: `npm i` (or `npm install`). 
-* Create file `restaurants.csv` inside `src/data`, using `example.restaurants.csv` as a reference to ensure correct headers and formatting. 
+* Create file `localbytes.csv` inside `src/data`, using `example.localbytes.csv` as a reference to ensure correct headers and formatting. 
 
 ### Start the Development Server 
 * Run `npm run dev`. 
