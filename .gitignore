@@ -25,7 +25,5 @@ dist-ssr
 *.sw?
 
 # Ignore input CSV and generated JSON
-restaurants_dummy_data.csv
-restaurants_dummy_data.json
-/src/data/restaurants.csv
-/src/data/restaurants.json
+/src/data/localbytes.csv
+/src/data/localbytes.json
