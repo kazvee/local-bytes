@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import restaurants from '../data/restaurants.json';
+import localbytes from '../data/localbytes.json';
 
 function normalizeText(value) {
   return value
@@ -13,9 +13,9 @@ function normalizeText(value) {
     .toLowerCase();
 }
 
-function RestaurantList({ searchQuery }) {
-  const normalizedRestaurants = useMemo(() => {
-    return restaurants.map(r => ({
+function FoodSpotList({ searchQuery }) {
+  const normalizedFoodSpots = useMemo(() => {
+    return localbytes.map(r => ({
       ...r,
       n_name: normalizeText(r.name ?? ''),
       n_cuisine: normalizeText(r.cuisine ?? ''),
@@ -25,7 +25,7 @@ function RestaurantList({ searchQuery }) {
   }, []);
 
   const fuse = useMemo(() => {
-    return new Fuse(normalizedRestaurants, {
+    return new Fuse(normalizedFoodSpots, {
       keys: ['n_name', 'n_cuisine', 'n_notes', 'n_recommended'],
       threshold: 0.3,
       includeScore: true,
@@ -37,68 +37,68 @@ function RestaurantList({ searchQuery }) {
       ignoreLocation: true,
       findAllMatches: false
     });
-  }, [normalizedRestaurants]);
+  }, [normalizedFoodSpots]);
 
-  const filteredRestaurants = searchQuery
+  const filteredFoodSpots = searchQuery
     ? fuse.search(normalizeText(searchQuery)).map((result) => result.item)
-    : normalizedRestaurants;
+    : normalizedFoodSpots;
 
   return (
     <Container className='mt-4'>
       <Row xs={1} md={2} lg={3} className='g-4'>
-        {filteredRestaurants.length > 0 ? (
-          filteredRestaurants.map((restaurant, index) => (
+        {filteredFoodSpots.length > 0 ? (
+          filteredFoodSpots.map((foodSpot, index) => (
             <Col key={index}>
               <Card className='h-100 border-double'>
                 <Card.Body>
-                  <Card.Title>{restaurant.name}</Card.Title>
+                  <Card.Title>{foodSpot.name}</Card.Title>
                   <Card.Subtitle className='mb-2'>
-                    {restaurant.cuisine}
+                    {foodSpot.cuisine}
                   </Card.Subtitle>
                   <Card.Text>
-                    <strong>Postcode:</strong> {restaurant.postcode}
+                    <strong>Postcode:</strong> {foodSpot.postcode}
                   </Card.Text>
 
-                  {restaurant.mapUrl && (
+                  {foodSpot.mapUrl && (
                     <Card.Text>
                       📍
-                      <a href={restaurant.mapUrl} target="_blank" rel="noopener noreferrer">
+                      <a href={foodSpot.mapUrl} target="_blank" rel="noopener noreferrer">
                         Map
                       </a>
                     </Card.Text>
                   )}
 
-                  {restaurant.websiteUrl && (
+                  {foodSpot.websiteUrl && (
                     <Card.Text>
                       🌐
-                      <a href={restaurant.websiteUrl} target="_blank" rel="noopener noreferrer">
+                      <a href={foodSpot.websiteUrl} target="_blank" rel="noopener noreferrer">
                         Website
                       </a>
                     </Card.Text>
                   )}
 
-                  {restaurant.menuUrl && (
+                  {foodSpot.menuUrl && (
                     <Card.Text>
                       📗
-                      <a href={restaurant.menuUrl} target="_blank" rel="noopener noreferrer">
+                      <a href={foodSpot.menuUrl} target="_blank" rel="noopener noreferrer">
                         Menu
                       </a>
                     </Card.Text>
                   )}
 
-                  {restaurant.notes && restaurant.notes.trim() !== '' && (
+                  {foodSpot.notes && foodSpot.notes.trim() !== '' && (
                     <Card.Text>
-                      <strong>Notes:</strong> {restaurant.notes}
+                      <strong>Notes:</strong> {foodSpot.notes}
                     </Card.Text>
                   )}
 
-                  {restaurant.recommended && restaurant.recommended.length > 0 && (
+                  {foodSpot.recommended && foodSpot.recommended.length > 0 && (
                     <>
                       <Card.Text>
                         <strong>Recommended:</strong>
                       </Card.Text>
-                      <ul className='restaurant-list'>
-                        {restaurant.recommended.map((dish, index) => (
+                      <ul className='foodSpot-list'>
+                        {foodSpot.recommended.map((dish, index) => (
                           <li key={index}>{dish}</li>
                         ))}
                       </ul>
@@ -113,7 +113,7 @@ function RestaurantList({ searchQuery }) {
             <Card className='border-double'>
               <Card.Body className='d-flex justify-content-center align-items-center'>
                 <Card.Text>
-                  <strong>No restaurants found</strong>
+                  <strong>No food places found</strong>
                   <Card.Subtitle className='mt-2'>
                     Try another search, or make a sandwich at home. 🥪
                   </Card.Subtitle>
@@ -127,4 +127,4 @@ function RestaurantList({ searchQuery }) {
   );
 }
 
-export default RestaurantList;
+export default FoodSpotList;
