@@ -13,6 +13,18 @@ function normalizeText(value) {
     .toLowerCase();
 }
 
+function shuffleArray(array) {
+  const shuffled = [...array];
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled;
+}
+
 function FoodSpotList({ searchQuery }) {
   const normalizedFoodSpots = useMemo(() => {
     return localbytes.map(r => ({
@@ -39,16 +51,19 @@ function FoodSpotList({ searchQuery }) {
     });
   }, [normalizedFoodSpots]);
 
-  const filteredFoodSpots = searchQuery
-    ? fuse.search(normalizeText(searchQuery)).map((result) => result.item)
-    : normalizedFoodSpots;
+  const filteredFoodSpots = useMemo(() => {
+    const results = searchQuery
+      ? fuse.search(normalizeText(searchQuery)).map((result) => result.item)
+      : normalizedFoodSpots;
 
+    return shuffleArray(results);
+  }, [searchQuery, fuse, normalizedFoodSpots]);
   return (
     <Container className='mt-4'>
       <Row xs={1} md={2} lg={3} className='g-4'>
         {filteredFoodSpots.length > 0 ? (
-          filteredFoodSpots.map((foodSpot, index) => (
-            <Col key={index}>
+          filteredFoodSpots.map((foodSpot) => (
+            <Col key={`${foodSpot.name}-${foodSpot.postcode}`}>
               <Card className='h-100 border-double'>
                 <Card.Body>
                   <Card.Title>{foodSpot.name}</Card.Title>
